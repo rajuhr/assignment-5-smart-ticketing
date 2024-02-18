@@ -1,0 +1,10 @@
+body{
+    margin: 5%;
+    padding: 10px;
+    background-color: aliceblue;
+    color: black;
+    
+   }
+   .bus{
+    border: 2px solid #1dd100;
+   }

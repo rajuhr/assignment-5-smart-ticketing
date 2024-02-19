@@ -1,21 +1,21 @@
-const seats = document.getElementsByClassName("seat-bus");
+const seatOptionValue = document.getElementsByClassName("seat-bus");
 const availableSeat = document.getElementById("availableSeatOption");
-const total = document.getElementById("total");
-const leftbutton = document.getElementById("left-button-option");
-const maxTicket = document.getElementById("max-ticket");
-const couponField = document.getElementById("coupon-field-offer");
-const couponBtn = document.getElementById("coupon-btn-field");
-const discountContainer = document.getElementById('discount-container-offer');
-const discountText = document.getElementById('discount-option');
-const couponContainer = document.getElementById('coupon-container-gift')
-const grandTotal = document.getElementById('grand-total-count');
-const phoneNumber = document.getElementById('phone-option');
-const submitBtn = document.getElementById('submit-btn-option')
+const totalValue = document.getElementById("total");
+const leftbuttonoption = document.getElementById("left-button-option");
+const maxTicketOption = document.getElementById("max-ticket");
+const couponFieldMenu = document.getElementById("coupon-field-offer");
+const couponBtnOption = document.getElementById("coupon-btn-field");
+const discountContainerAmount = document.getElementById('discount-container-offer');
+const discountTextValue = document.getElementById('discount-option');
+const couponContainerDiscount = document.getElementById('coupon-container-gift')
+const grandTotalAmount = document.getElementById('grand-total-count');
+const phoneNumberOption = document.getElementById('phone-option');
+const submitBtnMenu = document.getElementById('submit-btn-option')
 
 let seatCountValueOfBus = 0;
 let totalTk = 0;
 let seatAvailAble = 8;
-for (const seat of seats) {
+for (const seat of seatOptionValue) {
   seat.addEventListener("click", function (e) {
     seat.style.backgroundColor = "#1DD100";
     seat.style.color = "white";
@@ -33,19 +33,19 @@ for (const seat of seats) {
     totalTk = totalTk + 550;
     seatAvailAble--;
     seat.disabled = true;
-    phoneNumber.disabled = false
+    phoneNumberOption.disabled = false
  
     availableSeat.innerText = seatCountValueOfBus;
-    total.innerText = totalTk;
-    leftbutton.innerText = seatAvailAble;
-    grandTotal.innerText = totalTk
+    totalValue.innerText = totalTk;
+    leftbuttonoption.innerText = seatAvailAble;
+    grandTotalAmount.innerText = totalTk
 
     if (seatCountValueOfBus >= 4) {
-      for (const seat of seats) {
+      for (const seat of seatOptionValue) {
         seat.disabled = true;
-        maxTicket.innerText = "Ticket reach out";
-        couponField.disabled = false;
-        couponBtn.disabled = false;
+        maxTicketOption.innerText = "Ticket reach out";
+        couponFieldMenu.disabled = false;
+        couponBtnOption.disabled = false;
       }
     }
 
@@ -53,27 +53,27 @@ for (const seat of seats) {
 }
 
 
-couponBtn.addEventListener('click', function(){
-    const coupon = couponField.value;
+couponBtnOption.addEventListener('click', function(){
+    const coupon = couponFieldMenu.value;
     if(coupon === 'NEW15' || coupon === 'Couple 20'){
         if(coupon === 'NEW15'){
             const discount = totalTk*0.15;
-            discountContainer.classList.remove('hidden');
-            discountText.innerText = discount;
-            couponContainer.classList.add('hidden');
+            discountContainerAmount.classList.remove('hidden');
+            discountTextValue.innerText = discount;
+            couponContainerDiscount.classList.add('hidden');
 
             const totalPrice = totalTk - discount;
-            grandTotal.innerText = totalPrice
+            grandTotalAmount.innerText = totalPrice
         }
 
         if(coupon === 'Couple 20'){
             const discount = totalTk * 0.2;
-            discountContainer.classList.remove('hidden');
-            discountText.innerText = discount;
-            couponContainer.classList.add('hidden');
+            discountContainerAmount.classList.remove('hidden');
+            discountTextValue.innerText = discount;
+            couponContainerDiscount.classList.add('hidden');
 
             const totalPrice = totalTk - discount;
-            grandTotal.innerText = totalPrice
+            grandTotalAmount.innerText = totalPrice
             
         }
     }else{
@@ -83,11 +83,11 @@ couponBtn.addEventListener('click', function(){
     
 })
 
-phoneNumber.addEventListener('input',function (){
-    const number = phoneNumber.value;
+phoneNumberOption.addEventListener('input',function (){
+    const number = phoneNumberOption.value;
     if(seatCountValueOfBus > 0 && number.length > 0){
-        submitBtn.disabled = false
+        submitBtnMenu.disabled = false
     }else{
-        submitBtn.disabled = true
+        submitBtnMenu.disabled = true
     }
 })

@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart ticketing</title>
     <!-- this is favicon -->
-    <link rel="icon" type="image/x-icon" href="images/favicone.png">
+    <link rel="icon" type="image/x-icon" href="images/favicon.jpg">
+    <!-- fontawesome -->
+    <script src="https://kit.fontawesome.com/d1b7a80fd1.js" crossorigin="anonymous"></script>
     <!-- css link -->
     <link rel="stylesheet" href="styles.css">
 
@@ -118,7 +120,7 @@
             <div class="bg-white rounded-xl">
                 <div class="my-5 lg:my-20 flex flex-col lg:flex-row">
                     <div class="w-full lg:w-8/12 justify-between lg:m-10 p-5 rounded-xl">
-                        <div class="flex flex-col lg:flex-row items-center ml-5">
+                        <div class="flex flex-col lg:flex-row items-center justify-between ml-5">
                             <div class="flex items-center gap-2 lg:gap-5 mb-3 lg:mb-0">
                                 <img src="./images/bus-logo.png" alt="" class="w-12 h-12 lg:w-16 lg:h-16" />
                                 <div class="ml-2 lg:ml-5">
@@ -186,7 +188,8 @@
                 <div class="flex flex-col gap-10">
                     <div class="w-full flex flex-row-reverse">
                         <button class="btn w-[150px]">
-                            <img src="./images/Vector.png" alt="" />
+                            
+                            <i class="fa-solid fa-life-ring"></i>
                         </button>
                     </div>
                     <div class="flex flex-col gap-5">
@@ -224,7 +227,7 @@
             <div class="p-5 my-5 bg-[#F7F8F8] rounded-xl">
                 <table class="w-full">
                     <tr class="flex justify-between">
-                        <th>Seat <span id="availableSeat" class="bg-[#1DD100] text-white">0</span></th>
+                        <th>Seat <span id="availableSeatOption" class="bg-[#1DD100] text-white">0</span></th>
                         <th>Class</th>
                         <th>Price</th>
                     </tr>
@@ -316,7 +319,7 @@
           <h1 class="text-3xl font-bold mb-4">Bus-Ticket</h1>
           <p class="text-base">E-Ticket is a digital platform to make your<br> daily commuting better</p>
         </div>
-        <div>
+        <div class="ml-60">
           <h6 class="font-bold mb-4">Download our app</h6>
           <div class="grid grid-cols-1  md:grid-cols-2 gap-4">
             <a href="#" class="btn bg-black text-white flex items-center">

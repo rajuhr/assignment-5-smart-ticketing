@@ -1,5 +1,5 @@
 const seats = document.getElementsByClassName("seat-bus");
-const availableSeat = document.getElementById("availableSeat");
+const availableSeat = document.getElementById("availableSeatOption");
 const total = document.getElementById("total");
 const leftbutton = document.getElementById("left-button-option");
 const maxTicket = document.getElementById("max-ticket");
@@ -12,7 +12,7 @@ const grandTotal = document.getElementById('grand-total-count');
 const phoneNumber = document.getElementById('phone-option');
 const submitBtn = document.getElementById('submit-btn-option')
 
-let seatCountValue = 0;
+let seatCountValueOfBus = 0;
 let totalTk = 0;
 let seatAvailAble = 8;
 for (const seat of seats) {
@@ -29,18 +29,18 @@ for (const seat of seats) {
         `;
     tbody.appendChild(tr);
 
-    seatCountValue++;
+    seatCountValueOfBus++;
     totalTk = totalTk + 550;
     seatAvailAble--;
     seat.disabled = true;
     phoneNumber.disabled = false
  
-    availableSeat.innerText = seatCountValue;
+    availableSeat.innerText = seatCountValueOfBus;
     total.innerText = totalTk;
     leftbutton.innerText = seatAvailAble;
     grandTotal.innerText = totalTk
 
-    if (seatCountValue >= 4) {
+    if (seatCountValueOfBus >= 4) {
       for (const seat of seats) {
         seat.disabled = true;
         maxTicket.innerText = "Ticket reach out";
@@ -85,7 +85,7 @@ couponBtn.addEventListener('click', function(){
 
 phoneNumber.addEventListener('input',function (){
     const number = phoneNumber.value;
-    if(seatCountValue > 0 && number.length > 0){
+    if(seatCountValueOfBus > 0 && number.length > 0){
         submitBtn.disabled = false
     }else{
         submitBtn.disabled = true
